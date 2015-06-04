@@ -23,15 +23,15 @@
 	
 	
 	<!-- 컨트롤러 -->
-	<bean id="mainController" class="com.listen.main.controller.MainController" >
+	<!-- <bean id="mainController" class="com.listen.main.controller.MainController" >
 		<property name="itemDao" ref="itemDao"></property>
 	</bean>
 
 	
-	<!-- 다오 -->
+
 	<bean id="itemDao" class="com.listen.main.dao.ItemDao">
 		<property name="smct" ref="sqlMapClientTemplate"></property>
-	</bean>
+	</bean>-->
 
 	
 	<!-- FileUplaod 설정 -->
@@ -58,7 +58,18 @@
 		<property name="password" value="${password}" />
 
 	</bean>
+	
+	<!-- 컨트롤러 -->
+	<bean id="loginAction" class="com.listen.member.controller.LoginAction" >
+		<property name="memberDao" ref="memberDao"></property>
+	</bean>
 
+	
+	<!-- 다오 -->
+	<bean id="memberDao" class="com.listen.member.dao.MemberDao">
+		<property name="smct" ref="sqlMapClientTemplate"></property>
+	</bean>
+	
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:config/sqlMapConfig.xml"/>
@@ -67,11 +78,22 @@
 		<property name="sqlMapClient" ref="sqlMapClient"/>
 	</bean>
 	
+		<!--  요청 url 과 Controller 매핑 
+	<bean name="/login.listen" class="com.listen.member.controller.LoginAction">
+		<property name="memberDao" ref="MemberDao"/>
+	</bean> -->
+
+	<!--  Dao beans
+	<bean id="memberDao" class=" com.listen.member.dao.MemberDao">
+		<constructor-arg ref="sqlMapClientTemplate"/>
+	</bean>  -->
 	
+
+
 
 	<!-- 컨트롤러의 처리 결과를 보여줄 뷰를 선택하는 방식 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="prefix" value="/WEB-INF/jsp"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 	

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=euc-kr"%>
 <HTML>
 	<HEAD>
-		<TITLE>ÄîÆş</TITLE>
+		<TITLE>Listen</TITLE>
 		<META http-equiv="Content-Type" content="text/html; charset=euc-kr">
 		<SCRIPT type="text/javascript">
 			 var filter = "win16|win32|win64|mac";
@@ -10,13 +10,14 @@
 			 {
 			 	if( filter.indexOf(navigator.platform.toLowerCase())<0 )
 			 	{
-			   		alert("¸ğ¹ÙÀÏ ±â±â¿¡¼­ Á¢¼Ó");
-			   		// ¾Æ·¡ ÁÖ¼Ò·Î ÀÌµ¿ÇÑ´Ù.
+			   		alert("ëª¨ë°”ì¼ ê¸°ê¸°ì—ì„œ ì ‘ì†");
+			   		// ì•„ë˜ ì£¼ì†Œë¡œ ì´ë™í•œë‹¤.
 			   		//location.href = "http://m.daum.net/";
 			  	}else{
-			   		//alert("PC¿¡¼­ Á¢¼Ó");
-			   		location.href = "/main.listen";
-			  	}
+			   		//window.alert("PCì—ì„œ ì ‘ì†");
+										
+			   		location.href = "/Login.listen";
+			 	}
 			}
 		</SCRIPT>
 	</HEAD>
