@@ -81,11 +81,16 @@ $(function(){
 			alert("ID(email) 입력하세요");
 			return false;
 		}
-		else if($('input:password[name=password]').val() =="")
+		else if(password == "")
 		{
 			alert("비밀번호를 입력해주세요");
 			return false;
 		}
+		/*else if(password <= 3)
+		{
+			alert("비밀번호는 최소 4자이상 입력해야합니다");
+			return false;
+		}*/
 		else if(gender  != "1" && gender != "2")
 		{
 			alert("성별을 체크하세요");

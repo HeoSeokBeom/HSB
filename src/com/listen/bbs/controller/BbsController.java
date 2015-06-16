@@ -57,6 +57,19 @@ public class BbsController extends BaseController{
 		return frame;
 	}
 	
+	@RequestMapping("/mView.listen")
+	public String mViewPage(HttpServletRequest request, HttpSession session) {
+		System.out.println("mViewPage 들어옴");
+		
+		
+		ArrayList bbsList = bbsDao.bbsViewList();
+		request.setAttribute("page", "mView");
+		request.setAttribute("bbsList",  bbsList);
+		request.setAttribute("mMainUrl", prefix + "bbs/BbsList.jsp");
+		
+		return mFrame;
+	}
+	
 	// 글 공감 버튼처리 Ajax
 	@RequestMapping("/ajax/bbsLikeCount.listen")
 	public void likeCount(BbsLikeSwitchDto bbsLikeSwitchDto)

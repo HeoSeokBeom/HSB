@@ -35,7 +35,7 @@ function cancel()
          <TR>
             <TD width="100" bgcolor="#CFDDFA" align="center"><B>I D(이메일)</B></TD>
             <TD bgcolor="#FFFFFF" colspan="3">
- 	<%=session.getAttribute("id") %>
+ 	<%=session.getAttribute("email") %>
 
          </DIV>
          <INPUT type="hidden" name="updateFilter" value="Y">

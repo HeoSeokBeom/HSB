@@ -43,6 +43,22 @@ public class MainController extends BaseController {
 		return frame;
 	}
 	
+	@RequestMapping("/mMain.listen")
+	public String mMainPage(HttpServletRequest request, HttpSession session) {
+
+		System.out.println("mMainPage 들어옴");
+			
+		ArrayList bbsList = bbsDao.bbsViewList();
+		request.setAttribute("page", "mMain");
+		request.setAttribute("bbsList",  bbsList);
+		
+		//request.setAttribute("mainUrl", prefix + "~~~.jsp");
+
+		return mFrame;
+	}
+	
+	
+	
 	@RequestMapping("/write.listen")
 	public String writePage(HttpServletRequest request, HttpSession session) {
 		

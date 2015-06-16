@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -20,7 +22,15 @@
         <![endif]-->
 
     </head>
-
+<%
+if(session.getAttribute("Error") == "N")
+{
+%>
+	alert("잘못된 정보입니다");
+<%
+	}
+%>
+ 
     <body>
 
         <div class="page-container">
